@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+:root {
+  --grid-player-colour: #C8E1FF; 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +14,11 @@
 
 body {
     text-align: center;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1020%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1021%26quot%3b)'%3e%3c/rect%3e%3cpath d='M1920 0L990.09 0L1920 191z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M990.09 0L1920 191L1920 357.28999999999996L959.9100000000001 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M959.9100000000001 0L1920 357.28999999999996L1920 669.47L600.8200000000002 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M600.8200000000002 0L1920 669.47L1920 931.28L401.9900000000001 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1080L258.83 1080L0 838.23z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 838.23L258.83 1080L1020.2 1080L0 726.1z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 726.1L1020.2 1080L1234.3 1080L0 668.36z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 668.36L1234.3 1080L1402.67 1080L0 331.07z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1020'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.94%25' y1='-19.44%25' x2='89.06%25' y2='119.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1021'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='%2300459e' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+   /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1020%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1021%26quot%3b)'%3e%3c/rect%3e%3cpath d='M1920 0L990.09 0L1920 191z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M990.09 0L1920 191L1920 357.28999999999996L959.9100000000001 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M959.9100000000001 0L1920 357.28999999999996L1920 669.47L600.8200000000002 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M600.8200000000002 0L1920 669.47L1920 931.28L401.9900000000001 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1080L258.83 1080L0 838.23z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 838.23L258.83 1080L1020.2 1080L0 726.1z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 726.1L1020.2 1080L1234.3 1080L0 668.36z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 668.36L1234.3 1080L1402.67 1080L0 331.07z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1020'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.94%25' y1='-19.44%25' x2='89.06%25' y2='119.44%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1021'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='%2300459e' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");*/
 }
 
 .splash-screen {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -74,6 +78,128 @@ body {
   .Input-text:focus {
     outline: none;
   }
+
+  .game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 80px;
+  }
+
+  .game-board-container {
+    display: grid;
+    grid-template-columns: 30px repeat(10, 1fr);
+    grid-template-rows: 30px repeat(10, 1fr);
+  }
+
+  .game-board-player {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 500px;
+    height: 500px;
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 10;
+  }
+
+  .game-board-player .cell {
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: var(--grid-player-colour);
+  }
+
+  .row-header,
+  .column-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #757575;
+  }
   
+  .fleet-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+
+  .btn-randomize {
+    background-image: linear-gradient(to right, #00c6ff 0%, #0072ff  51%, #00c6ff  100%);
+    margin: 10px;
+    padding: 10px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .btn-randomize:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .fleet-info {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .fleet-draggable {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .ship {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    background-color: rgb(163, 163, 163);
+    border: solid 2px rgb(151, 151, 151);
+    cursor: move;
+  }
+
+  .ship-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(78, 78, 78);
+    margin: 10px auto;
+  }
+
+  .destroyer {
+    height: 60px;
+    border-radius: 50% 50% 10% 10%;
+  }
+
+  .submarine {
+    height: 90px;
+    border-radius: 50px;
+  }
+
+  .cruiser {
+    height: 90px;
+    border-radius: 50px;
+  }
+
+  .battleship {
+    height: 120px;
+    border-radius: 50% 50% 10% 10%;
+  }
+
+  .carrier {
+    height: 150px;
+    border-radius: 5px;
+  }
  
 

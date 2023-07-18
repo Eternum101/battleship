@@ -15,6 +15,79 @@
         <button class="btn-start">Start Game</button>
     </div>
 </div>
+
+<div class="game-container">
+    <div class="game-board-container">
+        <div class="row-header"></div>
+        <div class="row-header">A</div>
+        <div class="row-header">B</div>
+        <div class="row-header">C</div>
+        <div class="row-header">D</div>
+        <div class="row-header">E</div>
+        <div class="row-header">F</div>
+        <div class="row-header">G</div>
+        <div class="row-header">H</div>
+        <div class="row-header">I</div>
+        <div class="row-header">J</div>
+
+        <!-- column headers -->
+        <div class="column-header">1</div>
+        <div class="column-header">2</div>
+        <div class="column-header">3</div>
+        <div class="column-header">4</div>
+        <div class="column-header">5</div>
+        <div class="column-header">6</div>
+        <div class="column-header">7</div>
+        <div class="column-header">8</div>
+        <div class="column-header">9</div>
+        <div class="column-header">10</div>
+        <div class="game-board-player"></div>
+    </div>
+    <div class="fleet-container">
+        <h1>Place Fleet</h1>
+        <button class="btn-randomize">Randomize</button>
+        <span class="fleet-info">Drag n' Drop</span>
+        <div class="fleet-draggable">
+            <div class="destroyer-container">
+                <div id="destroyer" class="ship destroyer" draggable="true">
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                </div>
+            </div>
+            <div class="submarine-container">
+                <div id="submarine" class="ship submarine" draggable="true">
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                </div>
+            </div>
+            <div class="cruiser-container">
+                <div id="cruiser" class="ship cruiser" draggable="true">
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                </div>
+            </div>
+            <div class="battleship-container">
+                <div id="battleship" class="ship battleship" draggable="true">
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                </div>
+            </div>
+            <div class="carrier-container">
+                <div id="carrier" class="ship carrier" draggable="true">
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                    <div class="ship-dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="./main.js"></script>
 </body>
 </html>

@@ -5,9 +5,12 @@ const { displayGameBoards, updateDisplay, displayGameOverMessage } = require('./
 
 const btnStart = document.querySelector('.btn-start');
 const usernameInput = document.querySelector('#username');
+const splashScreen = document.querySelector('.splash-screen');
 
 btnStart.addEventListener('click', () => {
     const username = usernameInput.value;
+    splashScreen.style.display = 'none';
+    document.body.style.backgroundImage = 'none';
     playGame(username);
 })
 
