@@ -1,41 +1,45 @@
-function generateGameBoardCells() {
-    const gameBoardPlayer = document.querySelector('.game-board-player');
+import { createShip } from "./ship";
 
-    for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
-            const cell = document.createElement('div');
-            cell.classList.add('cell');
-            cell.setAttribute('data-x', i);
-            cell.setAttribute('data-y', j);
-            gameBoardPlayer.appendChild(cell);
+function domElements() {
+    const flipButton = document.querySelector('.btn-flip');
+    const fleet = document.querySelector('.fleet-draggable');
+    flipButton.addEventListener('click', flipShips);
 
-            cell.addEventListener('dragover', (event) => {
-                event.preventDefault();
-            });
-            cell.addEventListener('drop', (event) => {
-                event.preventDefault();
-                const data = event.dataTransfer.getData("text");
-                const battleship = document.getElementById(data);
-                cell.appendChild(battleship);
-            });
+    function generateGameBoardCells() {
+        const gameBoardPlayer = document.querySelector('.game-board-player');
+
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.setAttribute('data-x', i);
+                cell.setAttribute('data-y', j);
+                gameBoardPlayer.appendChild(cell);
+
+            }
         }
     }
+
+    let angle = 0;
+
+    function flipShips() {
+        const optionShips = Array.from(fleet.children); 
+        if(angle ===0) {
+            angle = 90;
+        } else {
+            angle = 0;
+        }
+        optionShips.forEach(optionShip => optionShip.style.transform = `rotate(${angle}deg)`);
+    }
+
+    window.addEventListener('load', () => {
+        generateGameBoardCells();
+        fleetDraggable();
+    });
 }
 
-function fleetDraggable() {
-    const battleships = document.querySelectorAll('.ship');
-    battleships.forEach((battleship) => {
-        battleship.addEventListener('dragstart', (event) => {
-            event.dataTransfer.setData("text", event.target.id);
-        })
-    })
-}
-
-window.addEventListener('load', () => {
-    generateGameBoardCells();
-    fleetDraggable();
-})
+domElements();
 
 module.exports = {
-    
+    domElements, 
 }

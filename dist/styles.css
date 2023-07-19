@@ -109,6 +109,11 @@ body {
     background-color: var(--grid-player-colour);
   }
 
+  .cell {
+    width: 50px;
+    height: 50px;
+  }
+
   .row-header,
   .column-header {
     display: flex;
@@ -125,7 +130,7 @@ body {
     margin-left: 20px;
   }
 
-  .btn-randomize {
+  .btn-randomize, .btn-flip {
     background-image: linear-gradient(to right, #00c6ff 0%, #0072ff  51%, #00c6ff  100%);
     margin: 10px;
     padding: 10px 10px;
@@ -141,7 +146,7 @@ body {
     cursor: pointer;
   }
 
-  .btn-randomize:hover {
+  .btn-randomize:hover, .btn-flip:hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
@@ -164,6 +169,7 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 30px;
+    height: 30px;
     background-color: rgb(163, 163, 163);
     border: solid 2px rgb(151, 151, 151);
     cursor: move;
@@ -177,27 +183,31 @@ body {
     margin: 10px auto;
   }
 
-  .destroyer {
+  .destroyer-preview {
+    width: 30px;
     height: 60px;
     border-radius: 50% 50% 10% 10%;
   }
 
-  .submarine {
+  .submarine-preview {
+    width: 30px;
     height: 90px;
     border-radius: 50px;
   }
 
-  .cruiser {
+  .cruiser-preview {
+    width: 30px;
     height: 90px;
     border-radius: 50px;
   }
 
-  .battleship {
+  .battleship-preview {
+    width: 30px;
     height: 120px;
     border-radius: 50% 50% 10% 10%;
   }
 
-  .carrier {
+  .carrier-preview {
     height: 150px;
     border-radius: 5px;
   }
