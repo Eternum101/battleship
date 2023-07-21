@@ -7,88 +7,93 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="splash-screen">
-    <h1>BATTLESHIP</h1>
-    <div class="start-game">
-        <label for="username">Enter Name:</label>
-        <input type="text" id="username" class="Input-text">
-        <button class="btn-start">Start Game</button>
+    <div class="header">
+        <h1>BATTLESHIP</h1>
     </div>
-</div>
-
-<div class="game-container">
-    <div class="game-board-container">
-        <div class="row-header"></div>
-        <div class="row-header">A</div>
-        <div class="row-header">B</div>
-        <div class="row-header">C</div>
-        <div class="row-header">D</div>
-        <div class="row-header">E</div>
-        <div class="row-header">F</div>
-        <div class="row-header">G</div>
-        <div class="row-header">H</div>
-        <div class="row-header">I</div>
-        <div class="row-header">J</div>
-
-        <!-- column headers -->
-        <div class="column-header">1</div>
-        <div class="column-header">2</div>
-        <div class="column-header">3</div>
-        <div class="column-header">4</div>
-        <div class="column-header">5</div>
-        <div class="column-header">6</div>
-        <div class="column-header">7</div>
-        <div class="column-header">8</div>
-        <div class="column-header">9</div>
-        <div class="column-header">10</div>
-        <div class="game-board-player"></div>
-    </div>
-    <div class="fleet-container">
-        <h1>Place Fleet</h1>
-        <button class="btn-randomize">Randomize</button>
-        <button class="btn-flip">Flip</button>
-        <span class="fleet-info">Drag n' Drop</span>
-        <div class="fleet-draggable">
-            <div class="destroyer-container">
-                <div id="0" class="ship destroyer-preview" draggable="true">
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
+    <div class="gameboard-container">
+        <div class="grid-wrapper">
+            <div class="grid-container">
+                <h2 class="player-title">YOUR FLEET</h2>
+                <div class="grid-labels">
+                    <span>A</span>
+                    <span>B</span>
+                    <span>C</span>
+                    <span>D</span>
+                    <span>E</span>
+                    <span>F</span>
+                    <span>G</span>
+                    <span>H</span>
+                    <span>I</span>
+                    <span>J</span>
                 </div>
+                <div class="grid" id="player-gameboard"></div>
+                <div class="fleet-container">
+                    <h1>Place Fleet</h1>
+                    <div class="button-container">
+                      <button class="btn-randomize">Randomize</button>
+                      <button class="btn-flip">Flip</button>
+                    </div>
+                      <span class="fleet-info">Drag n' Drop (Press 'R' to Rotate)</span>
+                      <div class="fleet-draggable">
+                          <div class="destroyer-container">
+                              <div id="destroyer" class="ship destroyer-preview" draggable="true">
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                              </div>
+                          </div>
+                          <div class="submarine-container">
+                              <div id="submarine" class="ship submarine-preview" draggable="true">
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                              </div>
+                          </div>
+                          <div class="cruiser-container">
+                              <div id="cruiser" class="ship cruiser-preview" draggable="true">
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                              </div>
+                          </div>
+                          <div class="battleship-container">
+                              <div id="battleship" class="ship battleship-preview" draggable="true">
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                              </div>
+                          </div>
+                          <div class="carrier-container">
+                              <div id="carrier" class="ship carrier-preview" draggable="true">
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                                  <div class="ship-dot"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
             </div>
-            <div class="submarine-container">
-                <div id="1" class="ship submarine-preview" draggable="true">
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                </div>
+        <div class="seperator"></div>
+        <div class="grid-container">
+            <h2 class="enemy-title">ENEMY FLEET</h2>
+            <div class="grid-labels">
+                <span>A</span>
+                <span>B</span>
+                <span>C</span>
+                <span>D</span>
+                <span>E</span>
+                <span>F</span>
+                <span>G</span>
+                <span>H</span>
+                <span>I</span>
+                <span>J</span>
             </div>
-            <div class="cruiser-container">
-                <div id="2" class="ship cruiser-preview" draggable="true">
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                </div>
-            </div>
-            <div class="battleship-container">
-                <div id="3" class="ship battleship-preview" draggable="true">
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                </div>
-            </div>
-            <div class="carrier-container">
-                <div id="4" class="ship carrier-preview" draggable="true">
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                    <div class="ship-dot"></div>
-                </div>
-            </div>
+            <div class="grid" id="enemy-gameboard"></div>
         </div>
     </div>
 </div>
-<script src="./main.js"></script>
+<script src="./main.js" type="module"></script>
 </body>
 </html>

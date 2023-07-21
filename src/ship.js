@@ -1,4 +1,4 @@
-function createShip(name, length) {
+export function createShip(name, length) {
     return {
         name, 
         length,
@@ -9,8 +9,13 @@ function createShip(name, length) {
         },
         isSunk() {
             return this.hits >= this.length;
-        }
+        },
+        isPlaced: false,
+        orientation: "vertical",
+        startCell: null,
+        displayElement: null
     };
 }
 
-module.exports = { createShip }; 
+const ships = [];
+export { ships }; 
