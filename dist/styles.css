@@ -207,8 +207,28 @@ body {
   margin: 10px auto;
 }
 
+.destroyer {
+  background-color: brown !important;
+}
+
+.submarine {
+  background-color: blue !important;
+}
+
+.cruiser {
+  background-color: green !important;
+}
+
+.battleship {
+  background-color: gray !important;
+}
+
+.carrier {
+  background-color: purple !important;
+}
+
 .destroyer-preview {
-  width: 30px;
+  width: 20px;
   height: 60px;
   border-radius: 50% 50% 10% 10%;
 }
