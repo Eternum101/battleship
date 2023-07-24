@@ -1,4 +1,4 @@
-const createPlayer = require('../player');
+const { createPlayer } = require('../player');
 const createGameboard = require('../gameboard');
 
 describe('Player Factory Function', () => {
@@ -30,5 +30,22 @@ describe('Player Factory Function', () => {
     player.setTurn(false);
     player.attackEnemy(enemyGameboard, 0, 0);
     expect(enemyGameboard.missedAttacks).toEqual([]);
+  });
+
+  test('AI Player Attacks Random Coordinates', () => {
+    const player = createPlayer('AI Player', true); // Creating an AI player
+    const enemyGameboard = createGameboard();
+    player.setTurn(true);
+
+    for (let i = 0; i < 10; i++) {
+      player.aiAttack(enemyGameboard);
+    }
+
+    const boardSize = enemyGameboard.board.length;
+    const xCoordinates = enemyGameboard.missedAttacks.map((coord) => coord[0]);
+    const yCoordinates = enemyGameboard.missedAttacks.map((coord) => coord[1]);
+
+    expect(xCoordinates.every((x) => x >= 0 && x < boardSize)).toBe(true);
+    expect(yCoordinates.every((y) => y >= 0 && y < boardSize)).toBe(true);
   });
 });

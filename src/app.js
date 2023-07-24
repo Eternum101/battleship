@@ -1,35 +1,45 @@
-const createPlayer = require('./player');
-const createComputerPlayer = require('./computerPlayer');
-const createGameBoard = require('./gameboard');
-const { displayGameBoards, updateDisplay, displayGameOverMessage } = require('./dom');
+// app.js
 
-function playGame(username) {
-    const player = createPlayer('Player 1');
-    const computerPlayer = createComputerPlayer();
-    const playerGameBoard = createGameBoard();
-    const computerGameBoard = createGameBoard();
+// Import the factory functions
+const { createShip } = require('./ship');
+const createGameboard = require('./gameboard');
+const { createPlayer } = require('./player');
+const { renderGameboard } = require('./dom');
 
-    displayGameBoards(playerGameBoard, computerGameBoard);
+// Function to set up a new game
+function setupNewGame() {
+  const humanPlayer = createPlayer('Human', false);
+  const computerPlayer = createPlayer('Computer', true);
 
-    player.setTurn(true);
+  // Create gameboards
+  const playerGameboard = createGameboard();
+  const computerGameboard = createGameboard();
 
-    while (!playerGameBoard.allShipsSunk() && !computerGameBoard.allShipsSunk()) {
-        if (player.getTurn()) {
-            player.attackEnemy(computerGameBoard, x, y);
-            updateDisplay(computerGameBoard, x, y);
-            computerPlayer.setTurn(true);
-        } else if (computerPlayer.getTurn()) {
-            const [x, y] = computerPlayer.attackEnemy(playerGameBoard);
-            updateDisplay(playerGameBoard, x, y);
-            player.setTurn(true);
-        }
-    } 
+  // Initialize the game
+  let currentPlayer = humanPlayer;
 
-    if (playerGameBoard.allShipsSunk()) {
-        displayGameOverMessage('Computer Wins!'); 
-    } else {
-        displayGameOverMessage('Player Wins!');
-    }
+  // Render the initial game state on the UI (display gameboards, ships, etc.)
+  renderGameboard(playerGameboard, 'player');
+  renderGameboard(computerGameboard, 'computer');
+
+  // Function to handle a player's turn
+  function handlePlayerTurn(x, y) {
+    // ... (existing game logic)
+
+    // Update the UI to reflect the game state after each turn
+    // Render the gameboards and other relevant information
+    renderPlayerGameboard(playerGameboard);
+    renderComputerGameboard(computerGameboard);
+
+    // Update the UI with the attack result (hit or miss)
+    handleAttackResult(currentPlayer === humanPlayer, x, y, isHit);
+
+    // ... (other parts of the game logic)
+  }
+
+  // ... (continue with the rest of the game loop)
+
 }
 
-module.exports = playGame;
+// Start the game by setting up a new game
+setupNewGame();

@@ -82,11 +82,11 @@ body {
   cursor: pointer;
 }
 
-#enemy-gameboard .cell {
+#computer .cell {
   background-color: #d8d8d8;
 }
 
-#enemy-gameboard .cell:hover {
+#computer .cell:hover {
   background-color: #adadad;
 }
 
