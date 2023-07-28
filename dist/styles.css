@@ -192,19 +192,23 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30px;
-  height: 30px;
-  background-color: rgb(163, 163, 163);
-  border: solid 2px rgb(151, 151, 151);
   cursor: move;
 }
 
-.ship-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgb(78, 78, 78);
-  margin: 10px auto;
+.ship div {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+}
+
+.ship.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.ship.vertical {
+  display: flex;
+  flex-direction: column;
 }
 
 .destroyer {

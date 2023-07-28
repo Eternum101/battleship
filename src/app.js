@@ -4,7 +4,7 @@
 const { createShip } = require('./ship');
 const createGameboard = require('./gameboard');
 const { createPlayer } = require('./player');
-const { renderGameboard } = require('./dom');
+const { renderGameboard, fleetDraggable } = require('./dom');
 
 // Function to set up a new game
 function setupNewGame() {
@@ -22,17 +22,19 @@ function setupNewGame() {
   renderGameboard(playerGameboard, 'player');
   renderGameboard(computerGameboard, 'computer');
 
+  fleetDraggable();
+
   // Function to handle a player's turn
   function handlePlayerTurn(x, y) {
     // ... (existing game logic)
 
-    // Update the UI to reflect the game state after each turn
-    // Render the gameboards and other relevant information
-    renderPlayerGameboard(playerGameboard);
-    renderComputerGameboard(computerGameboard);
+     // Update the UI to reflect the game state after each turn
+  // Render the gameboards and other relevant information
+  renderGameboard(playerGameboard, 'player');
+  renderComputerGameboard(computerGameboard);
 
-    // Update the UI with the attack result (hit or miss)
-    handleAttackResult(currentPlayer === humanPlayer, x, y, isHit);
+  // Update the UI with the attack result (hit or miss)
+  handleAttackResult(currentPlayer === humanPlayer, x, y, isHit);
 
     // ... (other parts of the game logic)
   }
