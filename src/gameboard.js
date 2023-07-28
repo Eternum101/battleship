@@ -98,39 +98,6 @@ function generateRandomShip(shipLength) {
   }
 }
 
-function checkShipPlacement(x, y, direction, shipLength) {
-  if (direction === 'horizontal') {
-    if (x + shipLength > 10) {
-      // Ship placement goes beyond the gameboard boundary
-      return false;
-    }
-
-    for (let i = 0; i < shipLength; i++) {
-      if (board[x + i][y]) {
-        // Collision with existing ship
-        return false;
-      }
-    }
-  } else if (direction === 'vertical') {
-    if (y + shipLength > 10) {
-      // Ship placement goes beyond the gameboard boundary
-      return false;
-    }
-
-    for (let i = 0; i < shipLength; i++) {
-      if (board[x][y + i]) {
-        // Collision with existing ship
-        return false;
-      }
-    }
-  }
-
-  // Ship placement is valid
-  return true;
-}
-
-// ... (rest of the code)
-    
 
   return {
     board,
